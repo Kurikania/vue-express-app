@@ -6,9 +6,10 @@
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server/index.js",
-    "server": "nodemon index.js",
+    "server": "nodemon server/index.js",
     "client": "npm run serve --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
