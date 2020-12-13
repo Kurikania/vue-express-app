@@ -27,10 +27,11 @@ router.delete('/:id', async (req, res) => {
     await posts.deleteOne({ _id: new mongodb.ObjectID(req.params.id) });
     res.status(200).send({});
 })
+//'mongodb+srv://abc123:security@cluster0.qnxni.mongodb.net/Test-app-traversy?retryWrites=true&w=majority', 
 
 async function loadPostsCollection() {
     const client = await mongodb.MongoClient.connect
-    ('mongodb+srv://abc123:security@cluster0.qnxni.mongodb.net/Test-app-traversy?retryWrites=true&w=majority', 
+    (process.env.MONGODB_URL, 
     {useNewUrlParser: true, useUnifiedTopology: true
     });
 
